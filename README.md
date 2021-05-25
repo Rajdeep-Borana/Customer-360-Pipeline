@@ -8,9 +8,9 @@
 •CRM team all the customer information in a MySQL/oracle_db
 S3("Orders")
 MySql("Customer_Info")
- • Order filtering on the "CLOSED" orders
- • Load Both the dataset in Hive
- • Notification & HBase data loading
+• Order filtering on the "CLOSED" orders
+• Load Both the dataset in Hive
+• Notification & HBase data loading
 
 🐝SOLUTION :--> 
 ===========
@@ -18,11 +18,11 @@ S3 Files(https connection) [In AIRFLOW]
 HTTP Sensor
 Connection - Name - Host/Port/Username/Password/schema
 SSH into edgeNode
-	1. Download the files from S3 into Local(edgeNode)
-	2. Sqoop will fetch the Customers_Info from MySql and Dump to Hive
-	3. Upload S3 orders file to HDFS location
-	4. Spark program <jar> <input path> <output path> [SUBMIT SPARK~JOB]
-	5. Create Hive table from the Output Path available in step 4
-	6. Upload it into Hbase (HBase Hive Connectors)
-	7. Slack #channel for communication
-	Success/Failure of the PipeLine
+1. Download the files from S3 into Local(edgeNode)
+2. Sqoop will fetch the Customers_Info from MySql and Dump to Hive
+3. Upload S3 orders file to HDFS location
+4. Spark program <jar> <input path> <output path> [SUBMIT SPARK~JOB]
+5. Create Hive table from the Output Path available in step 4
+6. Upload it into Hbase (HBase Hive Connectors)
+7. Slack #channel for communication
+Success/Failure of the PipeLine
