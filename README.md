@@ -11,9 +11,8 @@ MySql("Customer_Info")
  • Order filtering on the "CLOSED" orders
  • Load Both the dataset in Hive
  • Notification & HBase data loading
- 
-================XXXXXXXXXXX============XXXXXXXXXXXXX===========XXXXXXXXXXXXXX================
-🦖SOLUTION :-->
+
+🐝SOLUTION :--> 
 ===========
 S3 Files(https connection) [In AIRFLOW]
 HTTP Sensor
@@ -26,6 +25,4 @@ SSH into edgeNode
 	5. Create Hive table from the Output Path available in step 4
 	6. Upload it into Hbase (HBase Hive Connectors)
 	7. Slack #channel for communication
-		Success/Failure of the PipeLine
-
-
+	Success/Failure of the PipeLine
