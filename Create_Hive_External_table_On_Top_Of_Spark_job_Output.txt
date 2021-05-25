@@ -1,0 +1,8 @@
+CREATE external table if not exists airflow.orders(
+order_id int, order_date string, customer_id int, status string)
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/user/cloudera/airflow_output/'
+
+
