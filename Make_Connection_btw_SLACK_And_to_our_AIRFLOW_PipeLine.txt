@@ -1,0 +1,22 @@
+def slack_password():
+	return '**********'
+
+success_notify = SlackWebhookOperator(
+	task_id = 'success_notify',
+	http_conn_id = 'slack_webhook',
+	message = 'Data loaded successfully in HBase',
+	username = '###raj####',
+	webhook_token = slack_password(),
+	dag = dag
+)
+
+failure_notify = SlackWebhookOperator(
+	task_id = 'failure_notify',
+	http_conn_id = 'slack_webhook',
+	message = 'Data loaded failure for HBase',
+	#channel = '#customer-360-notification',
+	username = '###raj####',
+	webhook_token = slack_password(),
+	dag = dag,
+	trigger_rule = 'all_failed'
+)
