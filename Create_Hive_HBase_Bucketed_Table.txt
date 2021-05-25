@@ -1,0 +1,12 @@
+create table if not exists airflow_hbase(
+customer_id int, customer_fname string, customer_lname string,
+order_id int, orders_date string
+)
+CLUSTERED BY (customer_id) into 8 BUCKETS
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+with SERDEPROPERTIES
+('hbase.columns.mapping'=':key,personal:customer_fname,
+personal:customer_lname,
+personal:order_id,
+personal:order_date')
+TBLPROPERTIES("hbase.table.name"="Airflow_HBase");
